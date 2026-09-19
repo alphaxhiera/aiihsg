@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dokumentasi Logika & Fungsi Sistem — AI Stock Orchestrator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              500: '#10b981',
+              600: '#059669',
+              900: '#064e3b',
+              950: '#022c22'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #030712;
+      color: #f3f4f6;
+    }
+    code, pre, .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .gradient-border {
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(3, 7, 18, 0.9) 100%);
+    }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-200 antialiased selection:bg-emerald-500 selection:text-slate-950">
+
+  <!-- TOP HEADER -->
+  <header class="sticky top-0 z-50 glass-card border-b border-slate-800 bg-slate-950/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center space-x-3">
+        <div class="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold text-lg">
+          🧠 AI
+        </div>
+        <div>
+          <h1 class="text-lg font-bold text-white tracking-wide flex items-center gap-2">
+            Dokumentasi Logika & Fungsi Sistem
+            <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono border border-emerald-500/30">v2.4.0</span>
+          </h1>
+          <p class="text-xs text-slate-400">Arsitektur Algoritma, Alur Kerja Agent Swarm, & Formulas Stock Orchestrator</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 font-mono text-xs">
+        <a href="/" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-colors flex items-center gap-1.5">
+          <span>← Kembali ke Dashboard</span>
+        </a>
+        <a href="/datasource.md" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition-colors">
+          Datasource.md
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <!-- OVERVIEW HERO -->
+    <section class="glass-card rounded-2xl p-6 md:p-8 gradient-border space-y-4">
+      <div class="flex items-center gap-2 text-emerald-400 font-mono text-xs uppercase tracking-widest font-semibold">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        Arsitektur Sistem & Spesifikasi Fungsional
+      </div>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-white">
+        Dokumentasi Teknis Logika Fitur & Modul AI Stock Orchestrator
+      </h2>
+      <p class="text-slate-300 text-sm md:text-base leading-relaxed max-w-4xl">
+        Aplikasi ini berarsitektur <strong>Multi-Agent Intelligence Swarm</strong> yang mengombinasikan data transaksi real-time Bursa Efek Indonesia (BEI), analisis Bandarmology (Big Money Flow), Volatilitas Volume (RVOL), Indikator Makro Ekonomi, serta Pemodelan Valuasi Fundamental (DCF). Seluruh komponen terintegrasi secara modular dengan sinkronisasi state reaktif.
+      </p>
+
+      <!-- METRICS CHIPS -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-800/80 font-mono text-xs">
+        <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+          <span class="text-slate-400 text-[11px] block font-sans">Jumlah AI Agent Swarm</span>
+          <strong class="text-emerald-400 text-lg">7 Agen Spesialis</strong>
+        </div>
+        <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+          <span class="text-slate-400 text-[11px] block font-sans">Timeframe Volume</span>
+          <strong class="text-amber-400 text-lg">4 Skala (Sesi-M-W-M)</strong>
+        </div>
+        <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+          <span class="text-slate-400 text-[11px] block font-sans">Sesi Bursa BEI</span>
+          <strong class="text-blue-400 text-lg">7 Status Real-time</strong>
+        </div>
+        <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+          <span class="text-slate-400 text-[11px] block font-sans">Model Valuasi</span>
+          <strong class="text-purple-400 text-lg">DCF & Multi-Ratio</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABLE OF CONTENTS NAVIGATION -->
+    <nav class="glass-card rounded-xl p-4 border border-slate-800">
+      <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono mb-3">Daftar Isi Modul Logika:</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-xs">
+        <a href="#modul-1" class="p-2 rounded bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-slate-800 transition-colors truncate">1. AI Swarm Orchestrator</a>
+        <a href="#modul-2" class="p-2 rounded bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-slate-800 transition-colors truncate">2. Bandarmology & Flow</a>
+        <a href="#modul-3" class="p-2 rounded bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-slate-800 transition-colors truncate">3. Volume Monitoring & RVOL</a>
+        <a href="#modul-4" class="p-2 rounded bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-slate-800 transition-colors truncate">4. Jadwal Sesi BEI (MarketTime)</a>
+        <a href="#modul-5" class="p-2 rounded bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-slate-800 transition-colors truncate">5. Fundamental & DCF Valuation</a>
+        <a href="#modul-6" class="p-2 rounded bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-slate-800 transition-colors truncate">6. Makro Ekonomi & Sektor</a>
+        <a href="#modul-7" class="p-2 rounded bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-slate-800 transition-colors truncate">7. Katalis & Radar Rumor</a>
+        <a href="#modul-8" class="p-2 rounded bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-slate-800 transition-colors truncate">8. Alert & Trading Engine</a>
+      </div>
+    </nav>
+
+    <!-- SECTION 1: MULTI-AGENT AI SWARM -->
+    <section id="modul-1" class="glass-card rounded-2xl p-6 space-y-6 border border-slate-800">
+      <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+        <div class="p-2 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-mono font-bold">
+          01
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">Modul 1: AI Master Orchestrator & Specialized Agent Swarm</h3>
+          <p class="text-xs text-slate-400">Logika pembagian peran agen AI dan sintesis sinyal multi-domain</p>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-sm text-slate-300">
+        <p>
+          Sistem menggunakan arsitektur <strong>Multi-Agent Swarm</strong> di mana setiap agen memiliki keahlian domain spesifik. Master Orchestrator bertindak sebagai koordinator utama yang menggabungkan seluruh keluaran agen spesialis menjadi rekomendasi keputusan final.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Orchestrator -->
+          <div class="bg-slate-950 p-4 rounded-xl border border-emerald-500/30 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-emerald-400 font-mono">👑 Orchestrator (Master AI)</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono">Coordinator</span>
+            </div>
+            <p class="text-xs text-slate-300">
+              <strong>Fungsi:</strong> Mengagregasi sinyal dari 6 agen spesialis. Menghitung skor konsensus (*Consensus Score* 0–100) dan menentukan aksi rekomendasi (`STRONG BUY`, `BUY ON WEAKNESS`, `HOLD`, `TAKE PROFIT`, `STOP LOSS`).
+            </p>
+            <div class="bg-slate-900 p-2 rounded text-[11px] font-mono text-slate-400">
+              Score = (0.25 * Bandarmology) + (0.25 * Fundamental) + (0.20 * Technical) + (0.15 * Macro) + (0.15 * Sentiment)
+            </div>
+          </div>
+
+          <!-- Bandarmology Agent -->
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-amber-400 font-mono">🕵️‍♂️ Bandarmology Agent</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono">Big Money Flow</span>
+            </div>
+            <p class="text-xs text-slate-300">
+              <strong>Fungsi:</strong> Menganalisis Broker Summary, aliran dana institusi (*Big Accumulation* vs *Distribution*), serta transaksi *Net Foreign Buy/Sell* harian dan akumulasi 5-Hari.
+            </p>
+          </div>
+
+          <!-- Fundamental Agent -->
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-blue-400 font-mono">📊 Fundamental Agent</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono">Valuation & Growth</span>
+            </div>
+            <p class="text-xs text-slate-300">
+              <strong>Fungsi:</strong> Menilai kesehatan neraca, solvabilitas, rasio profitabilitas (ROE, NPM), serta kalkulasi harga wajar intrinsik (*DCF Fair Value*).
+            </p>
+          </div>
+
+          <!-- Technical Agent -->
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-purple-400 font-mono">📈 Technical Agent</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono">Chart & Price Action</span>
+            </div>
+            <p class="text-xs text-slate-300">
+              <strong>Fungsi:</strong> Mengidentifikasi struktur tren (Uptrend/Downtrend/Sideways), level Support/Resistance kritis, pola Candlestick, dan Moving Averages.
+            </p>
+          </div>
+
+          <!-- Macro Agent -->
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-cyan-400 font-mono">🌐 Macro Agent</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono">Economy & Sector</span>
+            </div>
+            <p class="text-xs text-slate-300">
+              <strong>Fungsi:</strong> Menghubungkan tren suku bunga BI Rate, kurs JISDOR USD/IDR, pergerakan komoditas acuan (Emas, Tembaga, Batu Bara, CPO), dan indeks rotasi sektor BEI.
+            </p>
+          </div>
+
+          <!-- Risk Agent -->
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-rose-400 font-mono">🛡️ Risk Manager Agent</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-mono">Money Management</span>
+            </div>
+            <p class="text-xs text-slate-300">
+              <strong>Fungsi:</strong> Menentukan *Risk/Reward Ratio* (minimal 1:2), alokasi persentase modal per posisi (*Position Sizing* max 10-15%), serta memasang batas ketat *Stop Loss* & *Take Profit*.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: BANDARMOLOGY LOGIC -->
+    <section id="modul-2" class="glass-card rounded-2xl p-6 space-y-6 border border-slate-800">
+      <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+        <div class="p-2 rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/30 font-mono font-bold">
+          02
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">Modul 2: Logika Analisa Bandarmology & Foreign Flow</h3>
+          <p class="text-xs text-slate-400">Algoritma konsentrasi broker dan kalkulasi pergerakan uang besar (Big Money)</p>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-sm text-slate-300">
+        <h4 class="font-bold text-amber-300 font-mono">A. Formula Konsentrasi Broker (Top 1, Top 3, Top 5)</h4>
+        <p>
+          Konsentrasi diukur dari perbandingan jumlah lot yang dibeli oleh Top Buyer terhadap jumlah lot yang dijual oleh Top Seller:
+        </p>
+        
+        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono text-xs space-y-2">
+          <div class="text-emerald-400">// Algoritma Kalkulasi Net Volume Top Broker</div>
+          <div>Net Volume Top N = Sum(Lot Buy Top N Broker) - Sum(Lot Sell Top N Broker)</div>
+          <div class="pt-2 text-slate-400">// Penentuan Status Bandarmology:</div>
+          <div>If (Net Volume Top 1 > 35% Total Vol) ➔ <span class="text-emerald-400 font-bold">BIG ACCUMULATION</span></div>
+          <div>Else If (Net Volume Top 1 > 15% Total Vol) ➔ <span class="text-emerald-300">NORMAL ACCUMULATION</span></div>
+          <div>Else If (Net Volume Top 1 < -35% Total Vol) ➔ <span class="text-rose-500 font-bold">BIG DISTRIBUTION</span></div>
+          <div>Else ➔ <span class="text-slate-400">NEUTRAL / CROSSING</span></div>
+        </div>
+
+        <h4 class="font-bold text-amber-300 font-mono mt-6">B. Klasifikasi Broker BEI</h4>
+        <ul class="list-disc pl-5 space-y-1 text-xs text-slate-300">
+          <li><strong class="text-emerald-400">Broker Asing (F):</strong> `ZP` (Maybank), `BK` (J.P. Morgan), `AK` (UBS), `CS` (Credit Suisse), `KZ` (CLSA).</li>
+          <li><strong class="text-blue-400">Broker Institusi Domestik (D):</strong> `OD` (BRI Danareksa), `NI` (BNI Sekuritas), `PD` (Indo Premier).</li>
+          <li><strong class="text-purple-400">Broker Ritel Domestik (R):</strong> `YP` (Mirae Asset), `CC` (Mandiri Sekuritas), `XL` (Stockbit Sekuritas).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 3: VOLUME MONITORING & RVOL -->
+    <section id="modul-3" class="glass-card rounded-2xl p-6 space-y-6 border border-slate-800">
+      <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+        <div class="p-2 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-mono font-bold">
+          03
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">Modul 3: Engine Pemantauan Volume Periodik & Anomali RVOL</h3>
+          <p class="text-xs text-slate-400">Penghitungan Relative Volume Ratio & Deteksi Lonjakan Transaksi</p>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-sm text-slate-300">
+        <h4 class="font-bold text-emerald-300 font-mono">A. Rumus Relative Volume Ratio (RVOL)</h4>
+        <p>
+          RVOL membandingkan volume transaksi periode berjalan dengan rata-rata bergerak volume 20-periode (MA20 Volume):
+        </p>
+
+        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono text-xs space-y-2">
+          <div>RVOL = Current Volume / MA20(Volume)</div>
+          <div class="pt-2 text-slate-400">// Klasifikasi Tingkat Lonjakan:</div>
+          <div>• RVOL &lt; 1.3x ➔ <span class="text-slate-400">Volume Normal (Aktivitas Rutin)</span></div>
+          <div>• RVOL 1.3x - 1.8x ➔ <span class="text-amber-400 font-semibold">Volume Spike Sedang (Perhatian)</span></div>
+          <div>• RVOL ≥ 2.0x ➔ <span class="text-amber-300 font-bold">VOLUME ANOMALY / BIG SPIKE 🔥</span></div>
+        </div>
+
+        <h4 class="font-bold text-emerald-300 font-mono mt-4">B. Timeframe Support</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs">
+          <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
+            <strong class="text-emerald-400 font-mono block">Intraday (Sesi)</strong>
+            <span>Detail transaksi Sesi 1 & Sesi 2 dengan tracker HAKA vs HAKI.</span>
+          </div>
+          <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
+            <strong class="text-emerald-400 font-mono block">Harian (Daily)</strong>
+            <span>Perbandingan volume harian terhadap rata-rata 20 hari bursa.</span>
+          </div>
+          <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
+            <strong class="text-emerald-400 font-mono block">Mingguan (Weekly)</strong>
+            <span>Agregasi volume mingguan untuk analisa akumulasi swing trader.</span>
+          </div>
+          <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
+            <strong class="text-emerald-400 font-mono block">Bulanan (Monthly)</strong>
+            <span>Tren akumulasi institusi jangka panjang (6 bulan terakhir).</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: MARKET TIME LOGIC -->
+    <section id="modul-4" class="glass-card rounded-2xl p-6 space-y-6 border border-slate-800">
+      <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+        <div class="p-2 rounded-lg bg-blue-500/20 text-blue-400 border border-blue-500/30 font-mono font-bold">
+          04
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">Modul 4: Logika Jam Bursa BEI (`marketTime.ts`)</h3>
+          <p class="text-xs text-slate-400">Penentuan status real-time jadwal perdagangan saham Indonesia</p>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-sm text-slate-300">
+        <p>
+          Fungsi <code class="text-blue-400 font-mono">getMarketInfo()</code> mengevaluasi waktu sistem (WIB / Asia/Jakarta) terhadap jam resmi Bursa Efek Indonesia:
+        </p>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="border-b border-slate-800 text-slate-400 font-mono">
+                <th class="py-2 px-3">Rentang Waktu (WIB)</th>
+                <th class="py-2 px-3">Hari Perdagangan</th>
+                <th class="py-2 px-3">Status Sesi BEI</th>
+                <th class="py-2 px-3">Indikator Lampu</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 font-mono">
+              <tr>
+                <td class="py-2 px-3 text-emerald-400">08:45 - 08:55</td>
+                <td class="py-2 px-3">Senin – Jumat</td>
+                <td class="py-2 px-3">Pre-Opening (Pembentukan Harga)</td>
+                <td class="py-2 px-3"><span class="text-amber-400">Kuning (Pre)</span></td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 text-emerald-400">09:00 - 12:00</td>
+                <td class="py-2 px-3">Senin – Kamis</td>
+                <td class="py-2 px-3">Sesi I Perdagangan Reguler</td>
+                <td class="py-2 px-3"><span class="text-emerald-400">Hijau (Buka)</span></td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 text-emerald-400">09:00 - 11:30</td>
+                <td class="py-2 px-3">Jumat Khusus</td>
+                <td class="py-2 px-3">Sesi I Perdagangan Reguler</td>
+                <td class="py-2 px-3"><span class="text-emerald-400">Hijau (Buka)</span></td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 text-amber-400">Istirahat Sesi I</td>
+                <td class="py-2 px-3">Senin – Jumat</td>
+                <td class="py-2 px-3">Break Siang (Sesi I Selesai)</td>
+                <td class="py-2 px-3"><span class="text-amber-400">Kuning (Break)</span></td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 text-emerald-400">13:30 / 14:00 - 15:50</td>
+                <td class="py-2 px-3">Senin – Jumat</td>
+                <td class="py-2 px-3">Sesi II Perdagangan Reguler</td>
+                <td class="py-2 px-3"><span class="text-emerald-400">Hijau (Buka)</span></td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 text-amber-400">15:50 - 16:00</td>
+                <td class="py-2 px-3">Senin – Jumat</td>
+                <td class="py-2 px-3">Pre-Closing / Pasca Penutupan</td>
+                <td class="py-2 px-3"><span class="text-amber-400">Kuning (Closing)</span></td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 text-rose-400">> 16:00 / Akhir Pekan</td>
+                <td class="py-2 px-3">Sabtu, Minggu & Libur</td>
+                <td class="py-2 px-3">Pasar Tutup (Closed)</td>
+                <td class="py-2 px-3"><span class="text-rose-500">Merah (Tutup)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: FUNDAMENTAL & DCF VALUATION -->
+    <section id="modul-5" class="glass-card rounded-2xl p-6 space-y-6 border border-slate-800">
+      <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+        <div class="p-2 rounded-lg bg-purple-500/20 text-purple-400 border border-purple-500/30 font-mono font-bold">
+          05
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">Modul 5: Analisa Fundamental & Model Valuasi DCF</h3>
+          <p class="text-xs text-slate-400">Kalkulasi Fair Value intrinsik dan Skor Kesehatan Neraca</p>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-sm text-slate-300">
+        <h4 class="font-bold text-purple-300 font-mono">A. Pemodelan Discounted Cash Flow (DCF) Simplified</h4>
+        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono text-xs space-y-2">
+          <div>Fair Value DCF = Sum[ FCF_t / (1 + WACC)^t ] + Terminal Value</div>
+          <div class="text-slate-400 pt-1">// Parameter Default:</div>
+          <div>• WACC (Weighted Average Cost of Capital) = 8.5% - 10.0%</div>
+          <div>• Terminal Growth Rate (g) = 3.0%</div>
+          <div>• Margin of Safety (MoS) = (Fair Value - Current Price) / Fair Value * 100%</div>
+        </div>
+
+        <h4 class="font-bold text-purple-300 font-mono mt-4">B. Fundamental Health Score Index (0–100)</h4>
+        <p class="text-xs text-slate-300">
+          Diukur berdasarkan 5 pilar utama:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-5 gap-2 text-xs font-mono">
+          <div class="bg-slate-950 p-2.5 rounded border border-slate-800 text-center">
+            <span class="text-purple-400 block font-bold">ROE > 15%</span>
+            <span class="text-[10px] text-slate-400">Bobot 25%</span>
+          </div>
+          <div class="bg-slate-950 p-2.5 rounded border border-slate-800 text-center">
+            <span class="text-purple-400 block font-bold">DER < 1.0x</span>
+            <span class="text-[10px] text-slate-400">Bobot 20%</span>
+          </div>
+          <div class="bg-slate-950 p-2.5 rounded border border-slate-800 text-center">
+            <span class="text-purple-400 block font-bold">NPM > 10%</span>
+            <span class="text-[10px] text-slate-400">Bobot 20%</span>
+          </div>
+          <div class="bg-slate-950 p-2.5 rounded border border-slate-800 text-center">
+            <span class="text-purple-400 block font-bold">PER < Historical</span>
+            <span class="text-[10px] text-slate-400">Bobot 20%</span>
+          </div>
+          <div class="bg-slate-950 p-2.5 rounded border border-slate-800 text-center">
+            <span class="text-purple-400 block font-bold">Div Yield > 4%</span>
+            <span class="text-[10px] text-slate-400">Bobot 15%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: MACRO ECONOMY & SECTOR -->
+    <section id="modul-6" class="glass-card rounded-2xl p-6 space-y-6 border border-slate-800">
+      <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+        <div class="p-2 rounded-lg bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 font-mono font-bold">
+          06
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">Modul 6: Makro Ekonomi, Komoditas, & Rotasi Sektor</h3>
+          <p class="text-xs text-slate-400">Hubungan indikator makro dengan pendorong sektor saham BEI</p>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-sm text-slate-300">
+        <p>
+          Fitur ini menyinkronkan tren makro global dan domestik dengan sektor saham di BEI:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+          <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
+            <strong class="text-cyan-400 block font-mono">BI-Rate & JISDOR USD/IDR</strong>
+            <p class="mt-1 text-slate-300">
+              Suku bunga rendah (6.00%) mendukung pertumbuhan kredit perbankan (<code class="text-emerald-400">IDXFIN</code>) & ekspansi sektor properti.
+            </p>
+          </div>
+
+          <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
+            <strong class="text-amber-400 block font-mono">Pasar Komoditas LME / ICE / BMD</strong>
+            <p class="mt-1 text-slate-300">
+              Kenaikan harga Emas ($4,377/oz) & Tembaga ($14,515/ton LME) secara langsung meningkatkan margin emiten tambang mineral (<code class="text-amber-400">IDXBASIC</code>). Pengguna dapat mengubah atau memilih preset acuan bursa via modal interaktif.
+            </p>
+          </div>
+
+          <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
+            <strong class="text-purple-400 block font-mono">Rotasi 11 Sektor BEI</strong>
+            <p class="mt-1 text-slate-300">
+              Memantau aliran rotasi modal harian antar sektor untuk mendeteksi sektor mana yang sedang *Inflow* atau *Outflow*.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CATALYST & RUMOR RADAR -->
+    <section id="modul-7" class="glass-card rounded-2xl p-6 space-y-6 border border-slate-800">
+      <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+        <div class="p-2 rounded-lg bg-rose-500/20 text-rose-400 border border-rose-500/30 font-mono font-bold">
+          07
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">Modul 7: Berita Katalis, Radar Rumor, & Sentimen Komunitas</h3>
+          <p class="text-xs text-slate-400">Sistem penandaan sentimen berita dan agregasi opini pasar</p>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-sm text-slate-300">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
+            <strong class="text-rose-400 font-mono block">Radar Berita & Katalis Korporasi</strong>
+            <p class="text-slate-300">
+              Menangkap kejadian pemicu seperti RUPS Dividend, Laporan Keuangan Q3, serta isu Rebalancing Indeks MSCI / FTSE. Setiap berita diberi label sentimen:
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono">VERY BULLISH 🚀</span>
+              <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 font-mono">CATALYST SPIKE ⚡</span>
+              <span class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 font-mono">HIGH YIELD 💰</span>
+            </div>
+          </div>
+
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
+            <strong class="text-emerald-400 font-mono block">Forum Komunitas & Indeks Sentimen Trader</strong>
+            <p class="text-slate-300">
+              Menghitung rasio opini trader ritel vs institusi:
+            </p>
+            <div class="bg-slate-900 p-2 rounded font-mono text-[11px]">
+              Bullish Ratio = (Total Bullish Votes / Total Votes) * 100%
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: ALERT & TRADING ENGINE -->
+    <section id="modul-8" class="glass-card rounded-2xl p-6 space-y-6 border border-slate-800">
+      <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+        <div class="p-2 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-mono font-bold">
+          08
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">Modul 8: System Alert Engine & State Synchronization</h3>
+          <p class="text-xs text-slate-400">Sinkronisasi state reaktif dan pemicu notifikasi batas harga</p>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-sm text-slate-300">
+        <p>
+          Engine memperbarui seluruh komponen dashboard saat pengguna memilih saham baru atau mengubah parameter:
+        </p>
+
+        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono text-xs space-y-2">
+          <div class="text-emerald-400">// Alur Reaktivitas State React:</div>
+          <div>1. Event: `onSelectStock(symbol)` dicetuskan oleh pengguna.</div>
+          <div>2. App State: `selectedStock` diperbarui pada root component.</div>
+          <div>3. Child Updates:</div>
+          <div>   ├── `VolumeMonitoringChart` mere-render chart volume timeframe aktif.</div>
+          <div>   ├── `OrchestratorInsightCards` merecalculasi DCF, driver sektor, & broker summary.</div>
+          <div>   └── `ChatbotPanel` mengaktifkan konteks agen yang relevan.</div>
+          <div>4. Alert Monitor: Memeriksa apakah `Last Price >= Alert High` atau `Last Price <= Alert Low`.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: GOOGLE DRIVE INTEGRATION -->
+    <section id="modul-9" class="glass-card rounded-2xl p-6 space-y-6 border border-slate-800">
+      <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+        <div class="p-2 rounded-lg bg-blue-500/20 text-blue-400 border border-blue-500/30 font-mono font-bold">
+          09
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">Modul 9: Integrasi Google Drive Workspace (`driveService.ts`)</h3>
+          <p class="text-xs text-slate-400">Otentikasi Google OAuth & Sinkronisasi Laporan Riset ke Google Drive</p>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-sm text-slate-300">
+        <p>
+          Modul ini memungkinkan pengguna menghubungkan akun Google secara aman untuk mengespor laporan analisis saham BEI directly ke Google Drive:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
+            <strong class="text-blue-400 block">Alur Otentikasi OAuth (GSI & Firebase Auth):</strong>
+            <p className="text-slate-300 font-sans">
+              Pengguna melakukan Sign-in via popup Firebase Auth dengan OAuth Provider Google (`drive` & `drive.file` scopes). Access token disimpan secara terisolasi pada in-memory state aplikasi demi keamanan (*no local storage token leak*).
+            </p>
+          </div>
+
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
+            <strong class="text-emerald-400 block">Rest API Calls & Safegard Konfirmasi:</strong>
+            <p className="text-slate-300 font-sans">
+              1. <strong>Create File</strong>: Mengunggah dokumen riset Markdown (`.md`) via multipart REST API (`upload/drive/v3/files`).<br />
+              2. <strong>Delete File Safeguard</strong>: Setiap aksi hapus file mewajibkan konfirmasi modal eksplisit sebelum mengeksekusi HTTP DELETE ke Drive REST API.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 bg-slate-950/80 py-6 text-center text-xs text-slate-500 font-mono">
+    <p>AI Stock Orchestrator & Trading Dashboard — Dokumentasi Teknis Sistem © 2026</p>
+  </footer>
+
+</body>
+</html>

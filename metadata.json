@@ -1,0 +1,6 @@
+{
+  "name": "IHSG AI Analyzer & Agentic Radar",
+  "description": "Aplikasi analisa pasar modal IHSG bertenaga Agentic AI dengan Agen Analisa Teknikal Saham dan Agen Perdagangan Volume Besar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
